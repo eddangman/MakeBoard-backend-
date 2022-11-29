@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="logcss.css">
+    <title>로그인 폼</title>
+</head>
+<body>
+<section class="login-form">
+<h1>로그인 </h1>
+<form action="/login" method="post">
+    <div class="int-area ">
+        <input type="text" name="email" id="id" autocomplete="off" required>
+        <label for="id">Email </label>
+    </div>
+    <div class="int-area ">
+        <input type="password" name="password" id="pw" autocomplete="off" required>
+        <label for="pw">PASSWORD</label>
+    </div>
+    <div class="btn-area">
+        <button id="btn"
+                type="submit">LOGIN</button>
+    </div>
+    <div class="caption">
+        <a href="http://localhost:8080/userRegForm">회원가입</a>
+
+    </div>
+
+</form>
+</section>
+<script>
+        let id = $('#id');
+        let pw = $('#pw');
+        let btn = $('#btn');
+
+        $(btn).on('click', function(){
+            if($(id).val()==""){
+                $(id).next('label').addClass('warning');
+                setTimeout(function(){
+                    $('label').removeClass('warning')
+                },1500);
+
+
+
+
+            }else if($(pw).val()==""){
+                $(pw).next('label').addClass('warning');
+                setTimeout(function(){
+                    $('label').removeClass('warning')
+                },1500);
+            }
+
+        });
+
+
+
+
+    </script>
+</body>
+</html>
